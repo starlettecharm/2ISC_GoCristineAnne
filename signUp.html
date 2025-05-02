@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Homepage</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" href = "css\signUp.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <body>
+        <nav class = "navbar">
+            <div class = "navbar-left">
+                <h2> <a href = "index.html" id = "logo"> Starlette </a> </h2>
+            </div>
+            <div class = "navbar-center">
+            <button class = "hamburger" onclick = "toggleMenu()">&#9776;</button>
+            <ul id = "navbar-menu">
+                <li id = "home"> <a href = "index.html"> HOME </a> </li>
+                <li> <a href = "pricing.html"> PRICING </a> </li>
+                <li> <a href = "testimonials.html"> TESTIMONIALS </a> </li>
+                <li> <a href = "faqs.html"> FAQs </a> </li>
+                <li> <a href = "index.html#about-us"> ABOUT US </a> </li>
+            </ul>
+            </div>
+            <div class="navbar-right">
+                <button class="btn" id = "right-btn" onclick="toggleProfile()">My Profile</button>
+                <ul id="profile-menu">
+                    <li><a href="login.html">LOGIN</a></li>
+                    <li><a href="cart.html">SHOPPING CART</a></li>
+                    <li><a href="#">TRANSACTION HISTORY</a></li>
+                    <li><a href="#">ACCOUNT SETTINGS</a></li>
+                    <li><a href="#" id = "logout" onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> LOGOUT</a></li>
+                </ul>
+            </div>
+            <button class="profile-icon" onclick="toggleProfile()">
+                <i class="fa fa-user"></i>
+            </button>
+        </nav>
+
+        <div class="container">
+            <h2>Create Account</h2>
+            <form onsubmit="signUp(); return false;">
+                <p>Email</p>
+                <input type="email" id="reg-email" placeholder="Enter your email" required>
+                <p>Username</p>
+                <input type="username" id="reg-username" placeholder="Enter your username" required>
+                <p>Password</p>
+                <input type="password" id="reg-password" placeholder="Enter your password" required>
+                <p>Re-type password</p>
+                <input type="password" id="reg-retype-password" placeholder="Please re-type password" required>
+            
+                <div class="login-text">
+                    <span>Already have an account?</span> <a href="login.html">Log in</a>
+                </div>
+            
+                <p class="terms">
+                    By creating an account, you agree to the 
+                    <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.
+                </p>
+            
+                <button type="submit" class="sign-up-btn">Sign up</button>
+            
+                <div class="or-text">OR</div>
+            
+                <button type="button" class="google-btn">
+                    <img src="images\google-logo.png" alt="Google Logo">
+                    Continue with Google
+                </button>
+            </form>
+        </div>
+
+        <script src = "script.js"></script>
+    </body>
+    </html>

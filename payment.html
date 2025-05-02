@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Payment</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" href = "css\payment.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <body>
+        <nav class = "navbar">
+            <div class = "navbar-left">
+                <h2> <a href = "index.html" id = "logo"> Starlette </a> </h2>
+            </div>
+            <div class = "navbar-center">
+            <button class = "hamburger" onclick = "toggleMenu()">&#9776;</button>
+            <ul id = "navbar-menu">
+                <li id = "home"> <a href = "index.html"> HOME </a> </li>
+                <li> <a href = "pricing.html"> PRICING </a> </li>
+                <li> <a href = "testimonials.html"> TESTIMONIALS </a> </li>
+                <li> <a href = "faqs.html"> FAQs </a> </li>
+                <li> <a href = "index.html#about-us"> ABOUT US </a> </li>
+            </ul>
+            </div>
+            <div class="navbar-right">
+                <button class="btn" id = "right-btn" onclick="toggleProfile()">My Profile</button>
+                <ul id="profile-menu">
+                    <li><a href="login.html">LOGIN</a></li>
+                    <li><a href="cart.html">SHOPPING CART</a></li>
+                    <li><a href="#">TRANSACTION HISTORY</a></li>
+                    <li><a href="#">ACCOUNT SETTINGS</a></li>
+                    <li><a href="#" id = "logout" onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> LOGOUT</a></li>
+                </ul>
+            </div>
+            <button class="profile-icon" onclick="toggleProfile()">
+                <i class="fa fa-user"></i>
+            </button>
+        </nav>
+
+        <div class="container">
+            <div class="payment-method" id="paymethod">
+                <h2>Payment Method</h2>
+    
+                <label><input type="radio" name="method" value="GCash"> GCash</label>
+                <label><input type="radio" name="method" value="Credit Card" checked> Credit Card</label>
+                <label><input type="radio" name="method" value="Google Pay"> Google Pay</label>
+                <label><input type="radio" name="method" value="ShopeePay"> ShopeePay</label>
+            </div>
+    
+            <div class="card-details">
+                <h3>Credit Card Details</h3> 
+                <p id = "label">Name on Card</p>                               
+                <input type="text" placeholder="Enter name on card" id="name" required>
+                <p id = "label">Card number</p>
+                <input type="number" placeholder="Enter card number" id="cardNumber" required>
+                <p id = "label">Card expiration</p>
+                <div class="expiration">
+                    <select id="month">
+                    </select>
+                    <select id="year">
+                    </select>
+                </div>
+                <p id = "label">Card Security Code</p>
+                <input type="password" name="pin" maxlength="4" placeholder="Enter Card Security Code" id="cvv" inputmode="numeric" required>
+                <button onclick="submitPayment()" id = "payNow">Pay Now</button>
+            </div>
+    
+            <div class="confirmation" id="success">
+                <span class="close-overlay" onclick="redirectToCart()">X</span>
+                <div class="icon">💳</div>
+                <h2>Payment successfully completed</h2>
+                <p id = "redirectLabel">You will be redirected in <span id="countdown">10</span> seconds</p>
+                <p><a href="#" onclick="cancelRedirect()" id = "cancelRedirect">Cancel Redirect</a></p>
+            </div>
+    
+            <div class="confirmation" id="failed">
+                <span class="close-overlay" onclick="redirectToCart()">X</span>
+                <div class="icon">❌</div>
+                <h2>Payment failed</h2>
+                <p id = "redirectLabel">You will be redirected in <span id="countdown">10</span> seconds</p>
+                <p><a href="#" onclick="cancelRedirect()" id = "cancelRedirect">Cancel Redirect</a></p>
+            </div>
+        </div>
+
+        <script src = "script.js"></script>
+    </body>
+</html>

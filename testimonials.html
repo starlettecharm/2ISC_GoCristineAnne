@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<head>
+    <title>Testimonials</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "css\testimonials.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class = "navbar">
+        <div class = "navbar-left">
+            <h2> <a href = "index.html" id = "logo"> Starlette </a> </h2>
+        </div>
+        <div class = "navbar-center">
+        <button class = "hamburger" onclick = "toggleMenu()">&#9776;</button>
+        <ul id = "navbar-menu">
+            <li id = "home"> <a href = "index.html"> HOME </a> </li>
+            <li> <a href = "pricing.html"> PRICING </a> </li>
+            <li> <a href = "testimonials.html"> TESTIMONIALS </a> </li>
+            <li> <a href = "faqs.html"> FAQs </a> </li>
+            <li> <a href = "index.html#about-us"> ABOUT US </a> </li>
+        </ul>
+        </div>
+        <div class="navbar-right">
+            <button class="btn" id = "right-btn" onclick="toggleProfile()">My Profile</button>
+            <ul id="profile-menu">
+                <li><a href="login.html">LOGIN</a></li>
+                <li><a href="cart.html">SHOPPING CART</a></li>
+                <li><a href="#">TRANSACTION HISTORY</a></li>
+                <li><a href="#">ACCOUNT SETTINGS</a></li>
+                <li><a href="#" id = "logout" onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> LOGOUT</a></li>
+            </ul>
+        </div>
+        <button class="profile-icon" onclick="toggleProfile()">
+            <i class="fa fa-user"></i>
+        </button>
+    </nav>
+
+    <div class = "testimonial-container">
+        <h3>What Our Clients Say</h3>
+        <div class = "testimonial active">
+            <p><strong>"Incredible designs and super easy to work with!"</strong></p>
+            <p>I was in a rush and needed a poster within 24 hours. Not only was it delivered on time, but the quality was outstanding. Highly recommended.</p>
+            <p>- Juan dela C.</p>
+        </div>
+        <div class = "testimonial">
+            <p><strong>"Fast, professional, and stunning visuals!"</strong></p>
+            <p>I loved how they took my ideas and turned them into something even better. Definitely my go-to for design and video editing!</p>
+            <p>- Ellie R.</p>
+        </div>
+        <div class = "testimonial">
+            <p><strong>"Affordable and high-quality!"</strong></p>
+            <p>I was surprised at how professional the work looked for such a reasonable price. If you're looking for a designer who delivers, this is it!</p>
+            <p>- Maria C.</p>
+        </div>
+        <div class = "arrow">
+            <button onclick = "prevTestimonial()">←</button>
+            <button onclick = "nextTestimonial()">→</button>
+        </div>
+
+        <script>
+            let currentIndex = 0;
+            const testimonials = document.querySelectorAll('.testimonial');
+
+            function showTestimonial(index) {
+                testimonials.forEach((testimonial, i) => {
+                    testimonial.classList.toggle('active', i === index);
+                });
+            }
+
+            function nextTestimonial() {
+                currentIndex = (currentIndex + 1) % testimonials.length;
+                showTestimonial(currentIndex);
+            }
+
+            function prevTestimonial() {
+                currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+                showTestimonial(currentIndex);
+            }
+        </script>
+    <script src = "script.js"></script>
+</body>
+</html>

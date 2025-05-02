@@ -1,0 +1,274 @@
+html {
+    font-size: 16px;
+} 
+
+* {
+    font-family: Verdana, sans-serif;
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #ffffff;
+    padding: 20px;
+    text-align: left;
+}
+
+h3 {
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+a {
+    font-size: 1.1rem;
+}
+
+.highlight {
+    color: #fe81bd;
+}
+
+
+#logo {
+    font-size: 2rem;
+    color: #fe81bd;
+    padding: 1px;
+    text-align: left;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #000000;
+    padding: 10px 20px;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.navbar-left h2{
+    color:#fe81bd;
+    margin: 10px;
+    padding: 5px;
+}
+
+.navbar-center {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.navbar-center ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+}
+
+.navbar-center ul a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.navbar-center ul a:hover {
+    color: #fe81bd;
+    transition: all 0.1s ease;
+}
+
+#profile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.8);
+    border-left: 1px solid #fe81bd;
+    padding: 10px 0;
+    list-style: none;
+    z-index: 1000;
+    text-align: left;
+    flex-grow: 1;
+}
+
+#profile-menu.active {
+    display: block;
+}
+
+#profile-menu li {
+    padding: 10px 20px;
+}
+
+#profile-menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+}
+
+#profile-menu li a:hover {
+    color: #fe81bd;
+    transition: all 0.1s ease;
+}
+
+#profile-menu li a i {
+    margin-right: 10px;
+    color: #ffffff;
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+#profile-menu li a:hover i {
+    color: #fe81bd;
+    transition: all 0.1s ease;
+}
+
+.navbar-right ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+}
+
+.navbar-right ul a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px;
+}
+
+#logout {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+}
+
+
+.btn {
+    font-size: 1.1rem;
+    margin: 20px 15px 0px 0px;
+    padding: 10px 20px;
+    background: #ffffff;
+    color: #000000;
+    font-weight: 600;
+    text-decoration: none;
+    border: 5px #fe81bd solid;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    border-color: #ffffff;
+    background-color: #fe81bd;
+    transition: all 0.1s ease;
+}
+
+.hamburger {
+    display: none;
+    color: #ffffff;
+    background: #fe81bd;
+    padding: 2px 5px;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute; 
+    right: 25px;
+    top: 20px;
+}
+
+.hamburger:hover {
+    background: #ffffff;
+    color: #fe81bd;
+    transition: all 0.1s ease;
+}
+
+.profile-icon {
+    display: none;
+    color: #ffffff;
+    background: #fe81bd;
+    padding: 2px 5px;
+    font-size: 24px;
+    cursor: pointer;
+    position: fixed; 
+    right: 80px;
+    top: 21px;
+}
+
+#home {
+    display: none;
+}
+
+
+@media screen and (max-width: 900px) {
+    html {
+        font-size: 14px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .navbar-center ul {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px 0;
+        width: 100%;
+        text-align: center;
+    }
+    .navbar-center ul li {
+        padding: 10px 0;
+    }
+    .navbar-center ul.active {
+        display: flex;
+    }
+
+    #right-btn {
+        display: none;
+    }
+
+    .profile-icon {
+        display: block;
+    }
+
+
+    #profile-menu {
+        border-left: none;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: fixed;
+        top: 70px;
+        width: 100%;
+        height: 330px;
+        text-align: center;
+    }
+
+    #logout {
+        position: static;
+        margin: 10px 0;
+        text-align: center;
+    }
+    
+    #home {
+        display: block;
+    }
+}

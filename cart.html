@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cart</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" href = "css\cart.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <body>
+        <nav class = "navbar">
+            <div class = "navbar-left">
+                <h2> <a href = "index.html" id = "logo"> Starlette </a> </h2>
+            </div>
+            <div class = "navbar-center">
+            <button class = "hamburger" onclick = "toggleMenu()">&#9776;</button>
+            <ul id = "navbar-menu">
+                <li id = "home"> <a href = "index.html"> HOME </a> </li>
+                <li> <a href = "pricing.html"> PRICING </a> </li>
+                <li> <a href = "testimonials.html"> TESTIMONIALS </a> </li>
+                <li> <a href = "faqs.html"> FAQs </a> </li>
+                <li> <a href = "index.html#about-us"> ABOUT US </a> </li>
+            </ul>
+            </div>
+            <div class="navbar-right">
+                <button class="btn" id = "right-btn" onclick="toggleProfile()">My Profile</button>
+                <ul id="profile-menu">
+                    <li><a href="login.html">LOGIN</a></li>
+                    <li><a href="cart.html">SHOPPING CART</a></li>
+                    <li><a href="#">TRANSACTION HISTORY</a></li>
+                    <li><a href="#">ACCOUNT SETTINGS</a></li>
+                    <li><a href="#" id = "logout" onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> LOGOUT</a></li>
+                </ul>
+            </div>
+            <button class="profile-icon" onclick="toggleProfile()">
+                <i class="fa fa-user"></i>
+            </button>
+        </nav>
+
+        <div class = "cart-container">
+            <header class = "cart-header">
+                <h3> Product List </h3>
+                <h3 id = "goToCart" onclick = "toggleCart()"> Go to Cart </h3>
+            </header>
+
+            <div class = "product-list">
+                <div class="product-item">
+                    <img src="images/canva.png" alt="product-icon">
+                    <div class="product-info">
+                        <h4>Canva Poster Design</h4>
+                        <p>₱500</p>
+                    </div>
+                    <button class="addCart" product-name="Canva Poster Design" product-price="500">ADD TO CART</button>
+                </div>
+                <div class="product-item">
+                    <img src="images/photoshop.png" alt="product-icon">
+                    <div class="product-info">
+                        <h4>Photoshop Poster Design</h4>
+                        <p>₱600</p>
+                    </div>
+                    <button class="addCart" product-name="Photoshop Poster Design" product-price="600">ADD TO CART</button>
+                </div>
+                <div class="product-item">
+                    <img src="images/capcut.png" alt="product-icon">
+                    <div class="product-info">
+                        <h4>CapCut Video Editing</h4>
+                        <p>₱1000</p>
+                    </div>
+                    <button class="addCart" product-name="CapCut Video Editing" product-price="1000">ADD TO CART</button>
+                </div>
+            </div>
+
+            <div class = "cart-sidebar" id = "cartDropArea">
+                <h3 id = "closeCart" onclick = "toggleCart()">X</h3>
+                <h3 id = "shoppingCart">Shopping Cart</h3>
+                <h4 id = "itemCount">0 items</h4>
+                <hr>
+                <ul id = "cartItems"></ul>
+                <div class = "cart-footer">
+                    <div class = "discount-code">
+                        <h4 id = "discountCode"> Discount Code </h4>
+                        <input type = "text" id = "discountCodeInput" placeholder = "Enter Code">
+                        <button id = "applyDiscount">Apply</button>
+                    </div>
+                    <a href = "payment.html" id = "proceedToPayment"> Proceed to Payment </a>
+                </div>
+                <div id = "totalAmount">TOTAL: ₱0.00</div>
+            </div>
+        </div>
+        
+        <script src = "script.js"></script>
+    </body>
+    </html>

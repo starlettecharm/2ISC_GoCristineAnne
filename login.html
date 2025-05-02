@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Homepage</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src = "script.js"></script>
+        <link rel = "stylesheet" href = "css\login.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <body>
+        <nav class = "navbar">
+            <div class = "navbar-left">
+                <h2> <a href = "index.html" id = "logo"> Starlette </a> </h2>
+            </div>
+            <div class = "navbar-center">
+            <button class = "hamburger" onclick = "toggleMenu()">&#9776;</button>
+            <ul id = "navbar-menu">
+                <li id = "home"> <a href = "index.html"> HOME </a> </li>
+                <li> <a href = "pricing.html"> PRICING </a> </li>
+                <li> <a href = "testimonials.html"> TESTIMONIALS </a> </li>
+                <li> <a href = "faqs.html"> FAQs </a> </li>
+                <li> <a href = "index.html#about-us"> ABOUT US </a> </li>
+            </ul>
+            </div>
+            <div class="navbar-right">
+                <button class="btn" id = "right-btn" onclick="toggleProfile()">My Profile</button>
+                <ul id="profile-menu">
+                    <li><a href="login.html">LOGIN</a></li>
+                    <li><a href="cart.html">SHOPPING CART</a></li>
+                    <li><a href="#">TRANSACTION HISTORY</a></li>
+                    <li><a href="#">ACCOUNT SETTINGS</a></li>
+                    <li><a href="#" id = "logout" onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> LOGOUT</a></li>
+                </ul>
+            </div>
+            <button class="profile-icon" onclick="toggleProfile()">
+                <i class="fa fa-user"></i>
+            </button>
+        </nav>
+
+        <div class="container">
+            <h1>Login to get started</h1>
+            <form onsubmit="login(); return false;">
+                <p>Username</p>
+                <input type="text" id="usernameInput" placeholder="Enter your username" required>
+                <p>Password</p>
+                <input type="password" id="passwordInput" placeholder="Enter your password" required>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember Me</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="marketing">
+                    <label for="marketing">I want to receive emails about the product, feature updates, events, and marketing promotions.</label>
+                </div>
+                <div class="or-text">OR</div>
+                <button type="button" class="google-btn">
+                    <img src="images/google-logo.png" alt="Google Logo">
+                    Continue with Google
+                </button>
+                <button type="submit" class="login-btn">Login</button>
+                <p class="signup-link">
+                    New user? <a href="signUp.html">Sign-up here</a>
+                </p>
+            </form>
+        </div>
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const params = new URLSearchParams(window.location.search);
+                const username = params.get("username");
+
+                if (username) {
+                    const usernameInput = document.getElementById("usernameInput");
+                    if (usernameInput) {
+                        usernameInput.value = username;
+                    }
+                }
+            });
+        </script>
+    </body>
+    </html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Homepage</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" href = "css\style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <body>
+        <nav class = "navbar">
+            <div class = "navbar-left">
+                <h2> <a href = "index.html" id = "logo"> Starlette </a> </h2>
+            </div>
+            <div class = "navbar-center">
+            <button class = "hamburger" onclick = "toggleMenu()">&#9776;</button>
+            <ul id = "navbar-menu">
+                <li id = "home"> <a href = "index.html"> HOME </a> </li>
+                <li> <a href = "pricing.html"> PRICING </a> </li>
+                <li> <a href = "testimonials.html"> TESTIMONIALS </a> </li>
+                <li> <a href = "faqs.html"> FAQs </a> </li>
+                <li> <a href = "index.html#about-us"> ABOUT US </a> </li>
+            </ul>
+            </div>
+            <div class="navbar-right">
+                <button class="btn" id = "right-btn" onclick="toggleProfile()">My Profile</button>
+                <ul id="profile-menu">
+                    <li><a href="login.html">LOGIN</a></li>
+                    <li><a href="cart.html">SHOPPING CART</a></li>
+                    <li><a href="#">TRANSACTION HISTORY</a></li>
+                    <li><a href="#">ACCOUNT SETTINGS</a></li>
+                    <li><a href="#" id = "logout" onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> LOGOUT</a></li>
+                </ul>
+            </div>
+            <button class="profile-icon" onclick="toggleProfile()">
+                <i class="fa fa-user"></i>
+            </button>
+        </nav>
+
+        <div class = "content">
+            <div class = "text-column">
+                <h1>Seamless Designs, <br> Flawless Edits</h1>
+                <p>We turn your ideas into visuals that make an impact. Whether you need standout graphic designs to elevate your brand or polished video edits to tell your story, we’re here to bring your vision to life. Every project is approached with care and precision, ensuring every detail aligns with your goals.</p>
+                <a href = "requestQuote.html" class = "btn"> REQUEST A QUOTE </a>
+            </div>
+            <div class = "image-column">
+                <img src = "images\homepage.png" alt = "homepage-image" 
+                style = "width: 100%;">
+            </div>
+        </div>
+
+        <div class = "content-below">
+            <div class = "contentbelow-left">
+                <div class = "about-us" id = "about-us">
+                <h1> About <span class = "highlight"> Starlette </span></h1>
+                <p>Starlette is where creativity meets brilliance— just like a <span class = "highlight">star</span> that shines and a <span class = "highlight"> palette </span> that brings colors to life. Run by a college student with a passion for design and editing, we craft stunning visuals that make an impact.</p>
+                </div>
+
+                <div class = "newsletter">
+                <form class = "newsletter-form">
+                    <input type = "email" placeholder = "Email" required>
+                    <button class = "btn" id = "submit">STAY CONNECTED</button>
+                </form>
+                </div>
+            </div>
+        </div>
+
+        <footer class = "footer">
+            <div class = "footer-content">
+            <h3>Powered by</h3>
+                <div class = "social-media">
+                    <a href = "https://www.canva.com/free/" target = "_blank"> <img src = "images\canva.png" alt = "canva.png" class = "social-icon"> </a>
+                    <a href = "https://www.adobe.com/products/photoshop.html" target = "_blank"> <img src = "images\photoshop.png" alt = "photoshop.png" class = "social-icon"> </a>
+                    <a href = "https://www.capcut.com/" target = "_blank"> <img src = "images\capcut.png" alt = "capcut.png" class = "social-icon"> </a>
+                </div>
+                <p id = "copyright">© 2025 Starlette. Seamless Designs, Flawless Edits.</p>
+            </div>
+        </footer>
+
+        
+        <div id = "quoteOverlay" class = "overlay">
+            <form class="quote-form">
+                <span id="closeQuote">X</span>
+                <h2>Request a quote</h2>
+            
+                <div class="form-group">
+                    <div style="flex: 1;">
+                        <label for="first-name">First Name *</label>
+                        <input type="text" id="firstName" placeholder="First name" required>
+                    </div>
+                    <div style="flex: 1;">
+                        <label for="last-name">Last Name (optional)</label>
+                        <input type="text" id="lastName" placeholder="Last name">
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <div style="flex: 1;">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" placeholder="Email" required>
+                    </div>
+                    <div style="flex: 1;">
+                        <label for="contact-time">Best Time to Contact You *</label>
+                        <input type="time" id="contactTime" required>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <div style="flex: 1;">
+                        <label for="services">Services Needed *</label>
+                        <div>
+                            <label><input type="checkbox" name="services" value="canva"> Canva Poster Design</label>
+                            <label><input type="checkbox" name="services" value="photoshop"> Photoshop Poster Design</label>
+                            <label><input type="checkbox" name="services" value="capcut"> CapCut Video Editing</label>
+                        </div>
+                    </div>
+                    <div style="flex: 1;">
+                        <label for="budget">Budget *</label>
+                        <input type="number" id="budget" placeholder="Enter your budget" required>
+                    </div>
+                </div>
+            
+                <div class="form-group single">
+                    <label for="message">Message (optional)</label>
+                    <textarea id="message" placeholder="Leave a message here"></textarea>
+                </div>
+            
+                <button id="submitRequest">SEND REQUEST</button>
+            </form>
+        </div>
+
+        <script src = "script.js"></script>
+    </body>
+    </html>
